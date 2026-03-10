@@ -236,6 +236,45 @@
   startTimer();
 })();
 
+/* ── About Section Slideshow ─────────────────────────────── */
+(function () {
+  var slides = document.querySelectorAll('#about-slideshow .about-slide');
+  var dots   = document.querySelectorAll('#about-slideshow .about-dot');
+  if (!slides.length) return;
+
+  var current  = 0;
+  var total    = slides.length;
+  var timer;
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dots[current] && dots[current].classList.remove('active');
+    current = (index + total) % total;
+    slides[current].classList.add('active');
+    dots[current] && dots[current].classList.add('active');
+  }
+
+  function startTimer() {
+    timer = setInterval(function () { goTo(current + 1); }, 4500);
+  }
+
+  dots.forEach(function (dot, i) {
+    dot.addEventListener('click', function () {
+      goTo(i);
+      clearInterval(timer);
+      startTimer();
+    });
+  });
+
+  var wrap = document.getElementById('about-slideshow');
+  if (wrap) {
+    wrap.addEventListener('mouseenter', function () { clearInterval(timer); });
+    wrap.addEventListener('mouseleave', function () { startTimer(); });
+  }
+
+  startTimer();
+})();
+
 /* ── Smooth Scroll for anchor links ───────────────────── */
 (function () {
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {

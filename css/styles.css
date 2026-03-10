@@ -1832,3 +1832,63 @@ p:last-child { margin-bottom: 0; }
   background: rgba(255,255,255,0.55);
 }
 
+
+/* ── About Section Slideshow ────────────────────────────────── */
+.about-image-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  /* maintain 4:3 aspect ratio */
+  aspect-ratio: 4 / 3;
+  background: #e8e0d4;
+}
+
+.about-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+  z-index: 0;
+}
+
+.about-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Keep badge and dots above slides */
+.about-image-badge { z-index: 3; }
+
+/* About dot indicators */
+.about-dots {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.55rem;
+  z-index: 4;
+}
+
+.about-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.8);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.about-dot.active {
+  background: #fff;
+  border-color: #fff;
+}
+
+.about-dot:hover {
+  background: rgba(255,255,255,0.55);
+}
