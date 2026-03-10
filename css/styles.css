@@ -1996,30 +1996,33 @@ p:last-child { margin-bottom: 0; }
 }
 
 .carousel-btn {
-  background: var(--green-dark);
+  background: #e8a020;
   color: #fff;
-  border: none;
+  border: 3px solid #fff;
   border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  font-size: 1.8rem;
+  width: 52px;
+  height: 52px;
+  font-size: 2rem;
+  font-weight: 700;
   line-height: 1;
   cursor: pointer;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s ease, transform 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 16px rgba(232,160,32,0.45), 0 2px 6px rgba(0,0,0,0.18);
 }
 .carousel-btn:hover {
-  background: var(--earth);
-  transform: scale(1.08);
+  background: var(--green-dark);
+  box-shadow: 0 6px 20px rgba(44,74,53,0.4), 0 2px 6px rgba(0,0,0,0.18);
+  transform: scale(1.1);
 }
 .carousel-btn:disabled {
-  opacity: 0.35;
+  opacity: 0.3;
   cursor: default;
   transform: none;
+  box-shadow: none;
 }
 
 .carousel-dots {
