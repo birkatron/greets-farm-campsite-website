@@ -188,9 +188,55 @@
       gtag('consent', 'update', { 'analytics_storage': 'granted' });
     }
   }
+})();/* ── Hero Slideshow ──────────────────────────────────────────── */
+(function () {
+  var slides = document.querySelectorAll('.hero-slide');
+  var dots   = document.querySelectorAll('.hero-dot');
+  if (!slides.length) return;
+
+  var current  = 0;
+  var total    = slides.length;
+  var interval = 5000; // ms between transitions
+  var timer;
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dots[current] && dots[current].classList.remove('active');
+    current = (index + total) % total;
+    slides[current].classList.add('active');
+    dots[current] && dots[current].classList.add('active');
+  }
+
+  function next() { goTo(current + 1); }
+
+  function startTimer() {
+    timer = setInterval(next, interval);
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    startTimer();
+  }
+
+  // Dot click handlers
+  dots.forEach(function (dot, i) {
+    dot.addEventListener('click', function () {
+      goTo(i);
+      resetTimer();
+    });
+  });
+
+  // Pause on hover, resume on leave
+  var hero = document.getElementById('hero-slideshow');
+  if (hero) {
+    hero.addEventListener('mouseenter', function () { clearInterval(timer); });
+    hero.addEventListener('mouseleave', function () { startTimer(); });
+  }
+
+  startTimer();
 })();
 
-/* ── Smooth Scroll for anchor links ───────────────────────── */
+/* ── Smooth Scroll for anchor links ───────────────────── */
 (function () {
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {

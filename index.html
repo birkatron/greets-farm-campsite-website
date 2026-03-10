@@ -126,10 +126,12 @@
 
   <main>
 
-    <!-- ── Hero ───────────────────────────────────────────── -->
-    <section class="hero" aria-label="Hero">
-      <!-- CLIENT PHOTO: Replace hero-howardian-hills.jpg with your own landscape photo showing the Howardian Hills or the campsite field with far-reaching views -->
-      <div class="hero-bg" style="background-image: url('images/site-field-overview.jpg');" role="img" aria-label="Greets Farm Campsite field with motorhomes and caravans on pitches, Howardian Hills, North Yorkshire"></div>
+    <!-- ── Hero Slideshow ──────────────────────────────────── -->
+    <section class="hero" aria-label="Hero" id="hero-slideshow">
+      <div class="hero-slide active" style="background-image: url('images/site-field-overview.jpg');" role="img" aria-label="Greets Farm Campsite field with motorhomes and caravans on pitches, Howardian Hills"></div>
+      <div class="hero-slide" style="background-image: url('images/site-motorhome-pitch.jpg');" role="img" aria-label="Motorhome on a well-kept pitch at Greets Farm, level mown grass field"></div>
+      <div class="hero-slide" style="background-image: url('images/site-sunset-campervan.jpg');" role="img" aria-label="Guest relaxing outside a campervan at sunset, Greets Farm Campsite"></div>
+      <div class="hero-slide" style="background-image: url('images/site-sunset-guests.jpg');" role="img" aria-label="Guests dining outside at sunset at Greets Farm Campsite, North Yorkshire"></div>
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <span class="hero-badge">Howardian Hills AONB · Welburn, North Yorkshire</span>
@@ -139,6 +141,12 @@
           <a href="booking.html" class="btn btn-earth">Check Availability</a>
           <a href="#about" class="btn btn-outline">Find Out More</a>
         </div>
+      </div>
+      <div class="hero-dots" aria-label="Slideshow controls">
+        <button class="hero-dot active" aria-label="Slide 1" data-slide="0"></button>
+        <button class="hero-dot" aria-label="Slide 2" data-slide="1"></button>
+        <button class="hero-dot" aria-label="Slide 3" data-slide="2"></button>
+        <button class="hero-dot" aria-label="Slide 4" data-slide="3"></button>
       </div>
     </section>
 

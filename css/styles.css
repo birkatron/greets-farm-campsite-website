@@ -1785,8 +1785,50 @@ p:last-child { margin-bottom: 0; }
 /* ── Schema.org / Structured Data ─────────────────────────── */
 /* (no visual styles needed — handled by JSON-LD in <head>) */
 
-/* ── Campsite Schema (Home page) ──────────────────────────── */
-/* Ensure the home page hero image is accessible */
-.hero-bg[role="img"] {
-  /* background-image set inline per page */
+/* ── Hero Slideshow ─────────────────────────────────────────── */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.4s ease-in-out;
+  z-index: 0;
 }
+.hero-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+/* keep overlay and content above slides */
+.hero-overlay { z-index: 2; }
+.hero-content  { z-index: 3; }
+
+/* Dot indicators */
+.hero-dots {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.65rem;
+  z-index: 4;
+}
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.75);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s, border-color 0.3s;
+}
+.hero-dot.active {
+  background: #fff;
+  border-color: #fff;
+}
+.hero-dot:hover {
+  background: rgba(255,255,255,0.55);
+}
+
