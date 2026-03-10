@@ -1192,16 +1192,19 @@ p:last-child { margin-bottom: 0; }
 
 .transport-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
 }
 
 .transport-item {
   background-color: #fff;
   border: 1px solid #E0D8CC;
   border-radius: 6px;
-  padding: 1.5rem;
+  padding: 1.75rem 1.5rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .transport-item i {
@@ -1605,7 +1608,7 @@ p:last-child { margin-bottom: 0; }
   }
 
   .transport-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .booking-cta-inner {
@@ -1712,6 +1715,10 @@ p:last-child { margin-bottom: 0; }
 
   .hero h1 {
     font-size: 2rem;
+  }
+
+  .transport-grid {
+    grid-template-columns: 1fr;
   }
 }
 
