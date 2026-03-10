@@ -215,8 +215,8 @@ p:last-child { margin-bottom: 0; }
 }
 
 .nav-logo img {
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
   border-radius: 50%;
 }
