@@ -289,3 +289,88 @@
     });
   });
 })();
+
+/* ── Reviews Carousel ─────────────────────────────────────────── */
+(function () {
+  const carousel = document.getElementById('reviewsCarousel');
+  const dotsWrap = document.getElementById('reviewsDots');
+  const btnPrev  = document.querySelector('.carousel-btn--prev');
+  const btnNext  = document.querySelector('.carousel-btn--next');
+  if (!carousel || !dotsWrap || !btnPrev || !btnNext) return;
+
+  const cards = Array.from(carousel.querySelectorAll('.testimonial-card'));
+  const total = cards.length;
+
+  /* How many cards are visible at once (responsive) */
+  function visibleCount() {
+    if (window.innerWidth <= 600) return 1;
+    if (window.innerWidth <= 900) return 2;
+    return 3;
+  }
+
+  let current = 0; /* index of first visible card */
+
+  /* Build dot buttons */
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    const pages = Math.ceil(total / visibleCount());
+    for (let i = 0; i < pages; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-label', 'Go to review page ' + (i + 1));
+      dot.addEventListener('click', function () { goTo(i * visibleCount()); });
+      dotsWrap.appendChild(dot);
+    }
+  }
+
+  function updateDots() {
+    const dots = dotsWrap.querySelectorAll('.carousel-dot');
+    const page = Math.floor(current / visibleCount());
+    dots.forEach(function (d, i) { d.classList.toggle('active', i === page); });
+  }
+
+  function goTo(index) {
+    const vc = visibleCount();
+    const maxIndex = Math.max(0, total - vc);
+    current = Math.max(0, Math.min(index, maxIndex));
+
+    /* Scroll the carousel so the target card is first */
+    const cardWidth = cards[0].offsetWidth;
+    const gap = parseFloat(getComputedStyle(carousel).gap) || 24;
+    carousel.scrollLeft = current * (cardWidth + gap);
+
+    btnPrev.disabled = current === 0;
+    btnNext.disabled = current >= maxIndex;
+    updateDots();
+  }
+
+  btnPrev.addEventListener('click', function () { goTo(current - visibleCount()); });
+  btnNext.addEventListener('click', function () { goTo(current + visibleCount()); });
+
+  /* Auto-advance every 6 seconds */
+  let autoTimer = setInterval(function () {
+    const vc = visibleCount();
+    const maxIndex = Math.max(0, total - vc);
+    goTo(current + vc > maxIndex ? 0 : current + vc);
+  }, 6000);
+
+  /* Pause on hover */
+  carousel.addEventListener('mouseenter', function () { clearInterval(autoTimer); });
+  carousel.addEventListener('mouseleave', function () {
+    autoTimer = setInterval(function () {
+      const vc = visibleCount();
+      const maxIndex = Math.max(0, total - vc);
+      goTo(current + vc > maxIndex ? 0 : current + vc);
+    }, 6000);
+  });
+
+  /* Rebuild on resize */
+  window.addEventListener('resize', function () {
+    buildDots();
+    goTo(0);
+  });
+
+  buildDots();
+  goTo(0);
+})();
