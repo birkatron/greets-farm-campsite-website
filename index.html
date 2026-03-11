@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Greets Farm Campsite | Adults Only Camping Near Castle Howard, North Yorkshire</title>
+  <title>Greets Farm Campsite | Adults Only Near Castle Howard</title>
   <meta name="description" content="Adults-only campsite in the Howardian Hills AONB, 3 miles from Castle Howard. 5 pitches, level field, village pub on the doorstep. Welburn, North Yorkshire.">
   <meta name="keywords" content="adults only campsite near Castle Howard, Howardian Hills campsite, adults only caravan site North Yorkshire, camping Welburn">
   <meta name="robots" content="index, follow">
@@ -11,8 +11,8 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Greets Farm Campsite | Adults Only Camping Near Castle Howard">
-  <meta property="og:description" content="Adults-only campsite in the Howardian Hills AONB, 3 miles from Castle Howard. 5 pitches, level field, village pub on the doorstep.">
+  <meta property="og:title" content="Greets Farm Campsite">
+  <meta property="og:description" content="Adults-only campsite in the Howardian Hills AONB, 3 miles from Castle Howard. 5 pitches, level field, village pub on the doorstep. Welburn, North Yorkshire">
   <meta name="twitter:card" content="summary_large_image" />
   <meta property="og:image" content="https://birkatron.github.io/greets-farm-campsite-website/images/site-sunset-guests.jpg">
   <meta property="og:url" content="https://www.greetsfarm.co.uk/">
@@ -47,16 +47,19 @@
     gtag('config', 'G-XXXXXXXXXX');
   </script>
 
-  <!-- Schema.org LocalBusiness / Campground -->
+  <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
+  [
   {
     "@context": "https://schema.org",
     "@type": "Campground",
+    "@id": "https://www.greetsfarm.co.uk/#campground",
     "name": "Greets Farm Campsite",
-    "description": "Adults-only campsite in the Howardian Hills AONB, 3 miles from Castle Howard, North Yorkshire. 5 pitches, level field, dog friendly.",
+    "description": "Adults-only campsite on a working farm in the Howardian Hills AONB, 3 miles from Castle Howard, North Yorkshire. Five pitches, level field, electric hook-up, dog friendly. Open spring to autumn.",
     "url": "https://www.greetsfarm.co.uk",
     "telephone": "07918 070716",
     "email": "info@greetsfarm.co.uk",
+    "image": "https://birkatron.github.io/greets-farm-campsite-website/images/site-sunset-guests.jpg",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Welburn",
@@ -74,16 +77,88 @@
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
     },
+    "priceRange": "££",
     "amenityFeature": [
       {"@type": "LocationFeatureSpecification", "name": "Electric Hook-up", "value": true},
       {"@type": "LocationFeatureSpecification", "name": "Shower", "value": true},
       {"@type": "LocationFeatureSpecification", "name": "Toilet", "value": true},
       {"@type": "LocationFeatureSpecification", "name": "Chemical Disposal Point", "value": true},
       {"@type": "LocationFeatureSpecification", "name": "Dogs Allowed", "value": true},
-      {"@type": "LocationFeatureSpecification", "name": "Adults Only", "value": true}
+      {"@type": "LocationFeatureSpecification", "name": "Adults Only", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Potwash Area", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Level Pitches", "value": true}
     ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "9",
+      "bestRating": "10",
+      "worstRating": "1",
+      "ratingCount": "10",
+      "reviewCount": "10"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Judith"},
+        "datePublished": "2025-09-01",
+        "reviewBody": "Great location for visiting Castle Howard which is 3 miles away. Lovely cafe and deli less than a mile away. Basic facilities but clean. A very quiet site.",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Leshar44"},
+        "datePublished": "2025-04-01",
+        "reviewBody": "Sarah operates an excellent site and we greatly enjoyed our short stay here. All the facilities you would require, grass pitches and great views. Sarah is a lovely, friendly host.",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Helade"},
+        "datePublished": "2023-09-01",
+        "reviewBody": "What a lovely campsite, very peaceful and tranquil with great views over the Howardian Hills. Very clean facilities. The owners were very friendly and welcoming. We would recommend this site to others.",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Irene Thomson"},
+        "datePublished": "2023-06-01",
+        "reviewBody": "Lovely peaceful site with basic but clean facilities. Sarah was very welcoming. So relaxing, sitting out listening to the birdsong and seeing the beautiful night skies without any streetlight glare.",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/pages/Greets-Farm-Camping/1023041194378151",
+      "https://www.ukcampsite.co.uk/sites/details.asp?siteid=8219"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.greetsfarm.co.uk/#organization",
+    "name": "Greets Farm Campsite",
+    "url": "https://www.greetsfarm.co.uk",
+    "logo": "https://birkatron.github.io/greets-farm-campsite-website/images/greets-farm-logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "07918 070716",
+      "contactType": "reservations",
+      "availableLanguage": "English"
+    },
     "sameAs": ["https://www.facebook.com/pages/Greets-Farm-Camping/1023041194378151"]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.greetsfarm.co.uk/"
+      }
+    ]
   }
+  ]
   </script>
 </head>
 <body>
@@ -202,9 +277,9 @@
             <span class="section-label">About Greets Farm</span>
             <h2 id="about-heading">Not many places.<br>The right ones.</h2>
             <div class="divider"></div>
-            <p>Tucked away on a small family farm in the Howardian Hills Area of Outstanding Natural Beauty, Greets Farm is a level, two-acre certificated site offering tranquillity, space and spectacular countryside views — with the added bonus of being just a mile's easy stroll from the charming village of Welburn.</p>
-            <p>Our adults-only site has been welcoming guests for over 15 years. Visitors love the rural farm feel — sheep grazing in neighbouring fields, views stretching toward Castle Howard — yet without feeling cut off from good food, local attractions and excellent transport links.</p>
-            <p>Sarah and Marcus Lyon run the site with the care and attention that only a small, family-run place can offer. Five pitches. Open countryside. Castle Howard just down the road.</p>
+            <p>Tucked away on a small family farm in the Howardian Hills Area of Outstanding Natural Beauty, Greets Farm is a level, two-acre Certificated Site (CS) offering tranquillity, space and spectacular countryside views — with the added bonus of being just a mile's easy stroll from the charming village of Welburn.</p>
+            <p>Our adults-only site has been welcoming guests for over 15 years. Visitors love the rural farm feel — sheep grazing in neighbouring fields, views stretching toward Castle Howard — yet without feeling cut off from good food, local attractions and excellent transport links. The site was voted Best CS in 2011 and continues to earn five-star reviews on UKCampsite.co.uk.</p>
+            <p>Sarah and Marcus Lyon run the site with the care and attention that only a small, family-run place can offer. Five pitches. Open countryside. Castle Howard just down the road. Call Sarah on <a href="tel:07918070716" style="color:#2C4A35;font-weight:600;">07918 070716</a> to check availability.</p>
             <a href="facilities.html" class="btn btn-outline-green">See Facilities &amp; Prices</a>
           </div>
         </div>
