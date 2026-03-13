@@ -191,6 +191,7 @@ p:last-child { margin-bottom: 0; }
   background-color: rgba(255, 255, 255, 0.97);
   border-bottom: 1px solid #E0D8CC;
   transition: box-shadow 0.3s ease;
+  overflow: visible;
 }
 
 .site-nav.scrolled {
@@ -205,6 +206,7 @@ p:last-child { margin-bottom: 0; }
   max-width: 1160px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  overflow: visible;
 }
 
 .nav-logo {
@@ -215,10 +217,12 @@ p:last-child { margin-bottom: 0; }
 }
 
 .nav-logo img {
-  width: 64px;
-  height: 64px;
+  width: 90px;
+  height: 90px;
   object-fit: contain;
   border-radius: 50%;
+  position: relative;
+  top: 9px;
 }
 
 .nav-logo-text {
